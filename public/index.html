@@ -1,11 +1,110 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>wei-nextlab / website</title>
-  </head>
-  <body>
-    <h1>Welcome to wei-nextlab/website</h1>
-    <p>Site deployed by automated workflow.</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NEXT Lab | Tao Wei</title>
+  <meta name="description" content="NEXT Lab at Clemson University: AI Systems and Architecture for Efficient Generative AI.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">NEXT Lab</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="research.html">Research</a>
+        <a href="fastflowlm.html">FastFlowLM</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Clemson University · NEXT Lab</p>
+        <h1>AI Systems and Architecture for Efficient Generative AI</h1>
+        <p class="lead">
+          Tao Wei's research combines runtime systems, hardware-software co-design, and
+          accelerator architecture to make generative AI practical on client and edge platforms.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="research.html">Explore Research</a>
+          <a class="btn btn-secondary" href="fastflowlm.html">See FastFlowLM Impact</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Key Highlights</h2>
+        <div class="grid cards-3">
+          <article class="card">
+            <h3>Systems Artifact</h3>
+            <p>
+              <strong>FastFlowLM</strong> demonstrates NPU-first runtime and kernel design for
+              low-power, high-throughput generative inference.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Architecture + Co-Design</h3>
+            <p>
+              The lab builds accelerator-aware software and evaluates NPU-class architectures
+              to improve efficiency across memory, latency, and throughput.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Production Translation</h3>
+            <p>
+              Collaboration and integration with AMD/ROCm provide concrete evidence that
+              research outcomes reached production semiconductor technology.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted">
+      <div class="container">
+        <h2>Why This Matters</h2>
+        <ul class="feature-list">
+          <li>Bridges open academic systems research with deployable industrial software stacks.</li>
+          <li>Targets practical generative AI performance under real power and memory constraints.</li>
+          <li>Develops students and collaborators across ECE systems, architecture, and AI software.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Quick Navigation</h2>
+        <div class="grid cards-2">
+          <a class="card card-link" href="research.html">
+            <h3>Research Program</h3>
+            <p>Research themes, architecture focus, and measurable impact.</p>
+          </a>
+          <a class="card card-link" href="fastflowlm.html">
+            <h3>FastFlowLM Story</h3>
+            <p>Timeline and significance of the technology transfer path.</p>
+          </a>
+          <a class="card card-link" href="about.html">
+            <h3>About Tao Wei</h3>
+            <p>Background, positioning, and leadership in efficient AI systems.</p>
+          </a>
+          <a class="card card-link" href="contact.html">
+            <h3>Contact</h3>
+            <p>Find external profile links and project repositories.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>NEXT Lab · Clemson University · Hosted on GitHub Pages</p>
+    </div>
+  </footer>
+</body>
 </html>
