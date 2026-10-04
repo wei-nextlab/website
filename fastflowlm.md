@@ -14,9 +14,9 @@ What began as federally funded lab work became **FastFlowLM, Inc.** in 2025, and
 
 ### Founders
 
-- **Tao Wei** — Professor of ECE, Clemson University; directs the NEXT Lab (domain-specific accelerators, reconfigurable computing, applied ML). Leads FLM kernel strategy.
+- **Tao Wei** — Professor of ECE; directs the NEXT Lab (domain-specific accelerators, reconfigurable computing, applied ML). Leads FLM kernel strategy.
 - **Ken Qing Yang** — Distinguished Engineering Professor, University of Rhode Island. 30+ years in computer architecture; serial entrepreneur behind four deep-tech startups, including VeloBit (acquired by Western Digital) and DapuStor.
-- **Zhenyu (Alfred) Xu** — Research Assistant Professor, Clemson University. Accelerator design and on-device AI inference, with hardware–software co-optimization across FPGA, CGRA, and AI accelerators.
+- **Zhenyu (Alfred) Xu** — Research Assistant Professor. Accelerator design and on-device AI inference, with hardware–software co-optimization across FPGA, CGRA, and AI accelerators.
 
 ## 🚀 2025–2026 — Building in the Open
 
