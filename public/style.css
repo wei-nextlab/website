@@ -188,6 +188,38 @@ p {
   margin-bottom: 8px;
 }
 
+.timeline {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  border-left: 3px solid #c7d6fb;
+}
+
+.timeline li {
+  position: relative;
+  margin: 0 0 12px;
+  padding: 0 0 0 14px;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.timeline .time {
+  display: inline-block;
+  min-width: 92px;
+  margin-right: 6px;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
 .content {
   padding: 36px 0 54px;
 }
