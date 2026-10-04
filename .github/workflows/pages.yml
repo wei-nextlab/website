@@ -1,4 +1,4 @@
-name: "Deploy to GitHub Pages"
+name: "Deploy to GitHub Pages (gh-pages branch)"
 
 on:
   push:
@@ -39,10 +39,11 @@ jobs:
             echo "SITE_DIR=public" >> $GITHUB_ENV
           fi
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ${{ env.SITE_DIR }}
+          branch: gh-pages
+          folder: ${{ env.SITE_DIR }}
+          clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
