@@ -1,4 +1,4 @@
-name: "Deploy to GitHub Pages (gh-pages branch)"
+name: "Deploy to GitHub Pages (manual git deploy)"
 
 on:
   push:
@@ -39,11 +39,34 @@ jobs:
             echo "SITE_DIR=public" >> $GITHUB_ENV
           fi
 
-      - name: Deploy to gh-pages branch
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: ${{ env.SITE_DIR }}
-          clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to gh-pages (git push)
+        env:
+          REPO: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          BRANCH: gh-pages
+        run: |
+          git --version
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          TMP_DIR=$(mktemp -d)
+          echo "Cloning repo into $TMP_DIR"
+          git clone "$REPO" "$TMP_DIR" || true
+          cd "$TMP_DIR"
+          # If branch doesn't exist, create orphan
+          if git show-ref --verify --quiet refs/heads/$BRANCH; then
+            git checkout $BRANCH
+          else
+            git checkout --orphan $BRANCH
+          fi
+          # Clean directory
+          git rm -rf . || true
+          # Copy site files
+          cp -a ${{ env.SITE_DIR }}/* . || true
+          # Ensure there's something to commit
+          git add --all
+          if git diff --cached --quiet; then
+            echo "No changes to deploy"
+          else
+            git commit -m "Deploy Pages: $GITHUB_SHA"
+            git push --force "$REPO" HEAD:$BRANCH
+          fi
 
