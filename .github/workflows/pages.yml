@@ -44,6 +44,7 @@ jobs:
           REPO: https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           BRANCH: gh-pages
         run: |
+          set -eux
           git --version
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
@@ -59,8 +60,11 @@ jobs:
           fi
           # Clean directory
           git rm -rf . || true
-          # Copy site files
-          cp -a ${{ env.SITE_DIR }}/* . || true
+          # Copy site files from workspace
+          SRC_DIR="$GITHUB_WORKSPACE/${{ env.SITE_DIR }}"
+          echo "Copying from $SRC_DIR to $TMP_DIR"
+          ls -la "$SRC_DIR" || true
+          cp -a "$SRC_DIR/." . || true
           # Ensure there's something to commit
           git add --all
           if git diff --cached --quiet; then
